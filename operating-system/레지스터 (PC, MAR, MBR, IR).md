@@ -4,11 +4,16 @@
 
 ## 내용
 
+
 ### 레지스터
+<img width="712" height="459" alt="image" src="https://github.com/user-attachments/assets/4e3701a0-1935-4441-805e-b0779c788b4a" />
+
 
 CPU 내부의 임시 저장 장치로, 프로그램 속 명령어와 데이터는 실행 전후로 반드시 레지스터에 저장된다.
 
 > 상용화된 CPU 속 레지스터들은 CPU마다 이름, 크기, 종류가 매우 다양하다.
+
+<img width="684" height="338" alt="image" src="https://github.com/user-attachments/assets/2ed977d1-6e78-427e-a976-dcad053424d9" />
 
 ### 프로그램 카운터 (PC; Program Counter)
 
