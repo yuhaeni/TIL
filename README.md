@@ -7,6 +7,7 @@
 ### 🖥️ 운영체제
 
 - [ALU와 제어장치](operating-system/ALU와%20제어장치.md)
+- [레지스터 (PC, MAR, MBR, IR)](operating-system/레지스터%20(PC,%20MAR,%20MBR,%20IR).md)
 
 ### ⚙️ 시스템 설계
 
