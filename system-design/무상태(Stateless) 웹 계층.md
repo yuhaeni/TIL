@@ -8,6 +8,8 @@
 상태 정보는 관계형 DB나 NoSQL 같은 지속성 저장소에 보관하고, 필요할 때만 가져오도록 한다.
 
 ### 1. 상태 정보 의존적인 아키텍처
+<img width="606" height="342" alt="image" src="https://github.com/user-attachments/assets/06abad74-6d7c-437e-9674-52a811f253a8" />
+
 
 클라이언트 정보, 즉 상태를 유지하여 요청들 사이에 공유되도록 하는 방식이다.
 
@@ -25,6 +27,8 @@
 고정 세션 기능이 켜진 경우 사용자가 수천, 수만 명으로 늘어나면 로드밸런서 입장에서 부담을 받는다.
 
 ### 2. 무상태 아키텍처
+<img width="511" height="379" alt="image" src="https://github.com/user-attachments/assets/a59eadef-5ec5-41b4-8f94-5572a9991fd0" />
+
 
 사용자 정보는 관계형 DB나 NoSQL, 또는 Redis 같은 캐시 시스템에 저장되어 있기 때문에,
 사용자 A의 HTTP 요청이 서버 1로 전송되든 서버 2로 전송되든 상관이 없다.
