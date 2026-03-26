@@ -9,6 +9,7 @@
 
 ### ⚙️ 시스템 설계
 
+- [ALU와 제어장치](system-design/ALU와%20제어장치.md)
 - [무상태(Stateless) 웹 계층](system-design/무상태(Stateless)%20웹%20계층.md)
 
 <!-- TIL_END -->
