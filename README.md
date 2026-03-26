@@ -1,6 +1,8 @@
 # TIL (Today I Learned)
 - 공부한 내용을 글로 남기면 매일 작은 성취감을 느낄 수 있어서 시작했습니다.
 - 완벽하지 않아도 스스로 설명하듯 정리하는 것 자체가 학습이라고 생각합니다.
+- [이전 TIL 보러가기](https://dev-haeni.tistory.com/category/Today%20I%20Learned%20%F0%9F%A7%90)
+
 
 ## Categories
 
