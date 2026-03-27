@@ -14,6 +14,7 @@
 
 ### ⚙️ 시스템 설계
 
+- [메세지 큐](system-design/메세지%20큐.md)
 - [무상태(Stateless) 웹 계층](system-design/무상태(Stateless)%20웹%20계층.md)
 
 <!-- TIL_END -->
