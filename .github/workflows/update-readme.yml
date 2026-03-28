@@ -6,6 +6,7 @@ on:
     paths:
       - 'operating-system/**'
       - 'system-design/**'
+      - 'docker/**'
 
 jobs:
   update-readme:
