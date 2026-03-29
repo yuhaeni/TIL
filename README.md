@@ -12,6 +12,7 @@
 - [ALU와 제어장치](operating-system/ALU와%20제어장치.md)
 - [레지스터 종류](operating-system/레지스터%20(PC,%20MAR,%20MBR,%20IR).md)
 - [특정 레지스터를 이용한 주소 지정 방식](operating-system/특정%20레지스터를%20이용한%20주소%20지정%20방식.md)
+- [프로세스와 PCB](operating-system/프로세스와%20PCB.md)
 
 ### ⚙️ 시스템 설계
 
