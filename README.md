@@ -10,6 +10,7 @@
 ### 🖥️ 운영체제
 
 - [ALU와 제어장치](operating-system/ALU와%20제어장치.md)
+- [CPU 스케줄링 알고리즘](operating-system/CPU%20스케줄링%20알고리즘.md)
 - [CPU 스케줄링](operating-system/CPU%20스케줄링.md)
 - [레지스터 종류](operating-system/레지스터%20(PC,%20MAR,%20MBR,%20IR).md)
 - [스레드와 멀티스레드](operating-system/스레드와%20멀티스레드.md)
