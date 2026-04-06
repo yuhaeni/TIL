@@ -12,6 +12,7 @@
 - [ALU와 제어장치](operating-system/ALU와%20제어장치.md)
 - [CPU 스케줄링 알고리즘](operating-system/CPU%20스케줄링%20알고리즘.md)
 - [CPU 스케줄링](operating-system/CPU%20스케줄링.md)
+- [RAM](operating-system/RAM.md)
 - [교착 상태](operating-system/교착%20상태.md)
 - [동기화 기법](operating-system/동기화%20기법.md)
 - [레지스터 종류](operating-system/레지스터%20(PC,%20MAR,%20MBR,%20IR).md)
