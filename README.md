@@ -16,6 +16,7 @@
 - [교착 상태](operating-system/교착%20상태.md)
 - [동기화 기법](operating-system/동기화%20기법.md)
 - [레지스터 종류](operating-system/레지스터%20(PC,%20MAR,%20MBR,%20IR).md)
+- [메모리 주소 공간](operating-system/메모리%20주소%20공간.md)
 - [스레드와 멀티스레드](operating-system/스레드와%20멀티스레드.md)
 - [특정 레지스터를 이용한 주소 지정 방식](operating-system/특정%20레지스터를%20이용한%20주소%20지정%20방식.md)
 - [프로세스 동기화](operating-system/프로세스%20동기화.md)
