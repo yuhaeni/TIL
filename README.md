@@ -21,6 +21,7 @@
 - [연속 메모리 할당](operating-system/연속%20메모리%20할당.md)
 - [캐시 메모리](operating-system/캐시%20메모리.md)
 - [특정 레지스터를 이용한 주소 지정 방식](operating-system/특정%20레지스터를%20이용한%20주소%20지정%20방식.md)
+- [페이징을 통한 가상 메모리 관리](operating-system/페이징을%20통한%20가상%20메모리%20관리.md)
 - [프로세스 동기화](operating-system/프로세스%20동기화.md)
 - [프로세스와 PCB](operating-system/프로세스와%20PCB.md)
 
