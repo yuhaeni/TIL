@@ -29,6 +29,9 @@
 
 ### 프로세스의 메모리 영역
 
+<img width="492" height="326" alt="image" src="https://github.com/user-attachments/assets/a5953321-c021-47a5-a91e-97cdf5dcae26" />
+
+
 | 영역 | 설명 | 특징 |
 |------|------|------|
 | 코드 영역 | CPU 명령어 저장 | 읽기 전용 |
