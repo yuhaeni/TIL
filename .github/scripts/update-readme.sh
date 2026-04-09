@@ -32,6 +32,7 @@ generate_section() {
   generate_section "operating-system" "🖥️ 운영체제"
   generate_section "system-design" "⚙️ 시스템 설계"
   generate_section "docker" "🐳 Docker"
+  generate_section "java" "☕ Java"
 } > "$SECTION_FILE"
 
 # README.md에서 TIL_START ~ TIL_END 사이를 교체
