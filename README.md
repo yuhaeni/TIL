@@ -38,6 +38,7 @@
 
 - [Arrays.sort() 내부 동작](java/Arrays.sort()%20내부%20동작.md)
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
+- [Strategy 패턴과 추상화](java/Strategy%20패턴과%20추상화.md)
 - [인스턴스화와 프로세스 메모리 구조](java/인스턴스화와%20프로세스%20메모리%20구조.md)
 
 <!-- TIL_END -->
