@@ -9,6 +9,7 @@ on:
       - 'docker/**'
       - 'java/**'
       - 'algorithm/**'
+      - 'kafka/**'
 
 jobs:
   update-readme:
