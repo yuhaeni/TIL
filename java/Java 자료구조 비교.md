@@ -5,6 +5,7 @@
 ## 내용
 
 ### ArrayList vs LinkedList
+<img width="439" height="427" alt="image" src="https://github.com/user-attachments/assets/d76dcbfc-ae49-4c06-b399-372035a493d4" />
 
 실무에서 리스트가 필요할 때 대부분의 경우 `ArrayList`를 선택한다. 이론상 시간복잡도뿐 아니라 **CPU 캐시 지역성**까지 고려해야 실무 성능을 제대로 이해할 수 있다.
 
