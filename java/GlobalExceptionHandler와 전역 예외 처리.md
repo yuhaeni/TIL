@@ -54,6 +54,9 @@ public class GlobalExceptionHandler {
 
 ### @Valid 검증 실패 시 전체 흐름
 
+<img width="755" height="507" alt="image" src="https://github.com/user-attachments/assets/7e6f2081-6f79-4432-b122-442407f76fcb" />
+
+
 ```
 사용자 요청
   → DispatcherServlet
