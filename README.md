@@ -40,6 +40,7 @@
 - [Arrays.sort() 내부 동작](java/Arrays.sort()%20내부%20동작.md)
 - [DTO 패턴, 관심사 분리와 OCP](java/DTO%20패턴,%20관심사%20분리와%20OCP.md)
 - [GlobalExceptionHandler와 전역 예외 처리](java/GlobalExceptionHandler와%20전역%20예외%20처리.md)
+- [Java 자료구조 비교](java/Java%20자료구조%20비교.md)
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
 - [Strategy 패턴과 추상화](java/Strategy%20패턴과%20추상화.md)
 - [상태 전이 설계와 Enum 활용](java/상태%20전이%20설계와%20Enum%20활용.md)
