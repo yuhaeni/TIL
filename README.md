@@ -54,4 +54,8 @@
 
 - [Kafka 파티션과 컨슈머 모델](kafka/Kafka%20파티션과%20컨슈머%20모델.md)
 
+### 🟣 Kotlin
+
+- [Named Argument와 빌더 패턴](kotlin/Named%20Argument와%20빌더%20패턴.md)
+
 <!-- TIL_END -->
