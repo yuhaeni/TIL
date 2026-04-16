@@ -1,4 +1,4 @@
-# Java 자료구조 비교
+# Java 자료구조 비교(ArrayList vs LinkedList, Stack vs ArrayDeque)
 
 > 날짜: 2026-04-15
 
