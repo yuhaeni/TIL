@@ -6,6 +6,10 @@
 
 ### LRU 캐시 구현: LinkedList vs LinkedHashMap
 
+<img width="724" height="315" alt="image" src="https://github.com/user-attachments/assets/43e5be11-873e-42f4-a1f5-4053f6e71ada" />
+
+
+
 LRU(Least Recently Used) 캐시를 구현할 때 자료구조 선택이 핵심이다.
 
 | | `LinkedList` | `LinkedHashMap` |
