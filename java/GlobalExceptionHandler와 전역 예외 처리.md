@@ -93,9 +93,52 @@ public ResponseEntity<ErrorResponse> handle(MethodArgumentNotValidException e) {
 | 사용 위치 | Controller 파라미터 | 모든 레이어 (Service 등) |
 | 그룹 검증 | 불가 | 가능 |
 
-`@Validated`가 Service 레이어에서도 동작하는 이유: **AOP 프록시**가 메서드 호출을 가로채서 검증을 수행하기 때문이다.
+`@Validated`가 Service 레이어에서도 동작하는 이유: **AOP 프록시**가 메서드 호출을 가로채서 검증을 수행하기 때문이다. (`@Transactional`과 동일한 원리)
 
-> **면접 예상 질문:** `@Valid`와 `@Validated`의 차이는? `@Validated`가 Service 레이어에서도 동작하는 이유는?
+**Self-invocation 함정:** 같은 클래스 내부에서 메서드를 호출하면 프록시를 거치지 않아 검증이 무시된다. `@Transactional`도 동일한 함정이 발생한다.
+
+> **면접 예상 질문:** `@Valid`와 `@Validated`의 차이는? AOP 프록시의 Self-invocation 함정이란?
+
+---
+
+### Checked vs Unchecked Exception과 예외 전파
+
+`BusinessException`이 `RuntimeException`을 상속받는 이유:
+
+- `Exception` 상속 = **Checked Exception** → try-catch 강제 → 중간 레이어에서 잡혀 `GlobalExceptionHandler`까지 전파 불가
+- `RuntimeException` 상속 = **Unchecked Exception** → try-catch 자유 → 자연스럽게 전파됨
+
+**예외 전파 흐름:**
+
+```
+정상 전파:
+Repository → Service → Controller → DispatcherServlet → GlobalExceptionHandler ✅
+
+try-catch로 잡힌 경우:
+Repository → Service (여기서 잡힘! 끝!) ❌
+  → Controller, DispatcherServlet, GlobalExceptionHandler 모두 도달 X
+```
+
+> **면접 예상 질문:** `BusinessException`이 `RuntimeException`을 상속받는 이유는? Checked와 Unchecked Exception의 차이는?
+
+---
+
+### @Transactional 롤백 기본 동작
+
+`@Transactional`의 기본 롤백 대상은 **Unchecked Exception(RuntimeException)** 만이다.
+
+- 이유: Checked Exception은 개발자가 try-catch로 직접 복구 가능하다고 봄 → 기본 롤백 대상 제외
+- Checked Exception도 롤백하려면 `rollbackFor` 속성을 명시해야 함
+
+```java
+@Transactional(rollbackFor = Exception.class)
+```
+
+`BusinessException`이 `RuntimeException`을 상속하면 `@Transactional` 자동 롤백까지 함께 보장된다. 이 흐름이 하나로 맞물려 있다.
+
+> **RuntimeException 상속 → Unchecked → try-catch 강제 없음 → 예외 전파 → GlobalExceptionHandler 처리 → @Transactional 자동 롤백**
+
+> **면접 예상 질문:** `@Transactional`의 기본 롤백 대상은? Checked Exception을 롤백하려면 어떻게 해야 하는가?
 
 ---
 
@@ -105,7 +148,8 @@ public ResponseEntity<ErrorResponse> handle(MethodArgumentNotValidException e) {
 - 횡단 관심사(예외 처리)를 컨트롤러에서 분리한 AOP 적용 사례
 - `BusinessException`에 status/errorCode를 담아 OCP 준수, ErrorCode enum으로 컴파일 타임 오타 감지
 - `@Valid` 실패 시 `MethodArgumentNotValidException` 발생 → `@RestControllerAdvice`가 가로챔
-- `@Validated`는 AOP 프록시 기반으로 Service 레이어 등 모든 레이어에서 사용 가능
+- `@Validated`는 AOP 프록시 기반, 같은 클래스 내 호출(Self-invocation) 시 프록시 미적용 주의
+- `RuntimeException` 상속 → Unchecked → 예외 전파 → `@Transactional` 자동 롤백까지 한 흐름으로 연결
 
 ## 참고
 
