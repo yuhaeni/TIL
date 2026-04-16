@@ -46,6 +46,30 @@ LinkedHashMap<String, String> cache = new LinkedHashMap<>(capacity, 0.75f, true)
 
 ---
 
+### 해시(Hash)의 동작 원리
+
+해시란 임의의 데이터(객체)를 고정된 숫자(인덱스)로 변환하는 기법이다.
+
+```
+key("apple") → hashCode() → 숫자(인덱스) → 배열[인덱스] 직접 접근
+```
+
+```java
+// HashMap의 hash 함수
+static final int hash(Object key) {
+    int h;
+    return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+}
+```
+
+- `hashCode()`: 객체를 숫자로 변환
+- 그 숫자가 배열의 **인덱스**가 됨
+- 인덱스로 배열에 직접 접근 → **O(1)**
+
+> **면접 예상 질문:** HashMap의 `get()`이 평균 O(1)인 이유는?
+
+---
+
 ### 캐시 쓰기 전략과 데이터 정합성
 
 캐시를 도입하면 캐시 데이터와 DB 데이터가 달라지는 **데이터 정합성(일관성) 문제**가 발생할 수 있다. 원본(DB)이 바뀌었는데 캐시가 업데이트되지 않으면, 사용자는 **오래된 데이터(Stale Data)** 를 보게 된다.
@@ -92,7 +116,8 @@ DB와 캐시를 **동시에** 업데이트한다.
 ## 학습 정리
 
 - LRU 구현 시 `containsKey()` O(1)을 활용하려면 `LinkedHashMap` (accessOrder=true) 선택
-- `LinkedHashMap`은 해시 기반 O(1) 접근 + 접근 순서 자동 관리로 LRU에 최적
+- 해시는 객체를 고정된 숫자(인덱스)로 변환하는 기법 → 배열 인덱스 직접 접근으로 O(1) 달성
+- `accessOrder=true`: 접근 시 자동으로 tail 이동 → head가 항상 가장 오래된 데이터 = LRU 정책에 최적
 - Write-Through: 정합성 강함, 쓰기 느림 / Write-Behind: 쓰기 빠름, 유실 위험 / Cache-Aside: 단순하지만 Cold Start
 - 면접에서는 전략 선택의 이유 + 대안 검토 과정을 설명할 수 있어야 함
 

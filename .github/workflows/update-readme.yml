@@ -10,6 +10,7 @@ on:
       - 'java/**'
       - 'algorithm/**'
       - 'kafka/**'
+      - 'kotlin/**'
 
 jobs:
   update-readme:

@@ -35,6 +35,7 @@ generate_section() {
   generate_section "java" "☕ Java"
   generate_section "algorithm" "🧮 알고리즘"
   generate_section "kafka" "📨 Kafka"
+  generate_section "kotlin" "🟣 Kotlin"
 } > "$SECTION_FILE"
 
 # README.md에서 TIL_START ~ TIL_END 사이를 교체
