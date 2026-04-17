@@ -37,6 +37,7 @@
 
 ### ☕ Java
 
+- [@Transactional 격리 수준](java/@Transactional%20격리%20수준.md)
 - [@Transactional 심화](java/@Transactional%20심화.md)
 - [@Transactional 전파 속성](java/@Transactional%20전파%20속성.md)
 - [Arrays.sort() 내부 동작](java/Arrays.sort()%20내부%20동작.md)
