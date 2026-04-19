@@ -12,6 +12,7 @@ on:
       - 'kafka/**'
       - 'kotlin/**'
       - 'jpa/**'
+      - 'redis/**'
 
 jobs:
   update-readme:
