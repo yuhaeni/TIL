@@ -67,4 +67,8 @@
 
 - [JPA FetchType과 N+1 문제](jpa/JPA%20FetchType과%20N+1%20문제.md)
 
+### 🔴 Redis
+
+- [Redis 분산 락과 교착 상태](redis/Redis%20분산%20락과%20교착%20상태.md)
+
 <!-- TIL_END -->
