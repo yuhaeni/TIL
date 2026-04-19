@@ -63,4 +63,8 @@
 
 - [Named Argument와 빌더 패턴](kotlin/Named%20Argument와%20빌더%20패턴.md)
 
+### 🗄️ JPA
+
+- [JPA FetchType과 N+1 문제](jpa/JPA%20FetchType과%20N+1%20문제.md)
+
 <!-- TIL_END -->
