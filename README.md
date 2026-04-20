@@ -44,6 +44,7 @@
 - [DTO 패턴, 관심사 분리와 OCP](java/DTO%20패턴,%20관심사%20분리와%20OCP.md)
 - [GlobalExceptionHandler와 전역 예외 처리](java/GlobalExceptionHandler와%20전역%20예외%20처리.md)
 - [Java 자료구조 비교(ArrayList vs LinkedList, Stack vs ArrayDeque)](java/Java%20자료구조%20비교(ArrayList%20vs%20LinkedList,%20Stack%20vs%20ArrayDeque).md)
+- [LinkedHashMap과 Map.merge()](java/LinkedHashMap과%20Map.merge().md)
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
 - [ResponseEntity와 ApiResponse 트레이드오프](java/ResponseEntity와%20ApiResponse%20트레이드오프.md)
 - [Strategy 패턴과 추상화](java/Strategy%20패턴과%20추상화.md)
