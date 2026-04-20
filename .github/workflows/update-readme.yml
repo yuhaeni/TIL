@@ -13,6 +13,7 @@ on:
       - 'kotlin/**'
       - 'jpa/**'
       - 'redis/**'
+      - 'database/**'
 
 jobs:
   update-readme:
