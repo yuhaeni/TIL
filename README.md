@@ -71,4 +71,8 @@
 
 - [Redis 분산 락과 교착 상태](redis/Redis%20분산%20락과%20교착%20상태.md)
 
+### 🛢️ Database
+
+- [PostgreSQL 인덱스와 B+Tree](database/PostgreSQL%20인덱스와%20B+Tree.md)
+
 <!-- TIL_END -->
