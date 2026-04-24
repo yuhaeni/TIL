@@ -10,6 +10,7 @@
 ### 🖥️ 운영체제
 
 - [ALU와 제어장치](operating-system/ALU와%20제어장치.md)
+- [CPU 스케줄링 실무 적용](operating-system/CPU%20스케줄링%20실무%20적용.md)
 - [CPU 스케줄링 알고리즘](operating-system/CPU%20스케줄링%20알고리즘.md)
 - [CPU 스케줄링](operating-system/CPU%20스케줄링.md)
 - [I/O 처리 패턴과 Graceful Degradation](operating-system/I-O%20처리%20패턴과%20Graceful%20Degradation.md)
