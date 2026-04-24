@@ -67,6 +67,7 @@
 
 ### 🟣 Kotlin
 
+- [Java record vs Kotlin data class](kotlin/Java%20record%20vs%20Kotlin%20data%20class.md)
 - [Named Argument와 빌더 패턴](kotlin/Named%20Argument와%20빌더%20패턴.md)
 
 ### 🗄️ JPA
