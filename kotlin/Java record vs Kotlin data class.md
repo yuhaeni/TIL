@@ -71,6 +71,10 @@ Person newPerson = new Person(oldPerson.name(), 30);
 
 ### JPA Entity를 data class로 만들면 안 되는 이유
 
+<img width="772" height="496" alt="image" src="https://github.com/user-attachments/assets/a60c6ebc-c284-4df6-b7d3-9e0b19a100da" />
+
+
+
 Kotlin 프로젝트에서 `data class` + `@Entity` 조합은 **지뢰밭**이다. 두 가지 중대 문제가 있다.
 
 **이유 1 — `final`이라 프록시 상속 불가**
