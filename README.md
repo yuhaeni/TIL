@@ -52,6 +52,7 @@
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
 - [ResponseEntity와 ApiResponse 트레이드오프](java/ResponseEntity와%20ApiResponse%20트레이드오프.md)
 - [Strategy 패턴과 추상화](java/Strategy%20패턴과%20추상화.md)
+- [record와 @Valid 동작 원리](java/record와%20@Valid%20동작%20원리.md)
 - [상태 전이 설계와 Enum 활용](java/상태%20전이%20설계와%20Enum%20활용.md)
 - [인스턴스화와 프로세스 메모리 구조](java/인스턴스화와%20프로세스%20메모리%20구조.md)
 - [커넥션 풀과 HikariCP](java/커넥션%20풀과%20HikariCP.md)
