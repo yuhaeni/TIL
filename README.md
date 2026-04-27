@@ -39,6 +39,7 @@
 
 ### ☕ Java
 
+- [@StepScope와 Late Binding](java/@StepScope와%20Late%20Binding.md)
 - [@Transactional 격리 수준](java/@Transactional%20격리%20수준.md)
 - [@Transactional 심화](java/@Transactional%20심화.md)
 - [@Transactional 전파 속성](java/@Transactional%20전파%20속성.md)
