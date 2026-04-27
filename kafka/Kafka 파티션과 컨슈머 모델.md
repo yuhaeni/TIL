@@ -6,6 +6,10 @@
 
 ### 파티션과 컨슈머의 1:1 관계
 
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/da8842be-336b-4418-b2c0-5d55fdb9227c" />
+
+<br>
+
 하나의 파티션은 하나의 컨슈머(스레드)만 처리해야 한다.
 
 여러 스레드가 같은 파티션을 동시에 읽으면:
