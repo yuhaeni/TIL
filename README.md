@@ -52,6 +52,7 @@
 - [LinkedHashMap과 Map.merge()](java/LinkedHashMap과%20Map.merge().md)
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
 - [ResponseEntity와 ApiResponse 트레이드오프](java/ResponseEntity와%20ApiResponse%20트레이드오프.md)
+- [Spring DI/IoC와 Bean 생성 순서](java/Spring%20DI%20IoC와%20Bean%20생성%20순서.md)
 - [Spring 이벤트 리스너와 옵저버 패턴](java/Spring%20이벤트%20리스너와%20옵저버%20패턴.md)
 - [Strategy 패턴과 추상화](java/Strategy%20패턴과%20추상화.md)
 - [record와 @Valid 동작 원리](java/record와%20@Valid%20동작%20원리.md)
