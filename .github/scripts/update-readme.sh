@@ -39,6 +39,7 @@ generate_section() {
   generate_section "jpa" "🗄️ JPA"
   generate_section "redis" "🔴 Redis"
   generate_section "database" "🛢️ Database"
+  generate_section "monitoring" "📊 Monitoring"
 } > "$SECTION_FILE"
 
 # README.md에서 TIL_START ~ TIL_END 사이를 교체
