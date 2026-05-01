@@ -51,6 +51,7 @@
 - [JVM 메모리와 GC, 리플렉션 최적화](java/JVM%20메모리와%20GC,%20리플렉션%20최적화.md)
 - [Java 자료구조 비교(ArrayList vs LinkedList, Stack vs ArrayDeque)](java/Java%20자료구조%20비교(ArrayList%20vs%20LinkedList,%20Stack%20vs%20ArrayDeque).md)
 - [JpaPagingItemReader `transacted` 함정과 영속성 컨텍스트](java/JpaPagingItemReader%20transacted%20함정과%20영속성%20컨텍스트.md)
+- [LRU 캐시와 멀티스레드 동시성](java/LRU%20캐시와%20멀티스레드%20동시성.md)
 - [LinkedHashMap과 Map.merge()](java/LinkedHashMap과%20Map.merge().md)
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
 - [ResponseEntity와 ApiResponse 트레이드오프](java/ResponseEntity와%20ApiResponse%20트레이드오프.md)
