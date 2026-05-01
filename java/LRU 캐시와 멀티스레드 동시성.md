@@ -33,6 +33,12 @@
 
 ---
 
+
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/a7fa42f0-0594-4d87-8907-d1a317f53501" />
+
+
+
+
 ### `Collections.synchronizedMap` — 전체 락의 함정
 
 ```java
