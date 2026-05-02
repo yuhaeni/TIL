@@ -56,6 +56,7 @@
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
 - [ResponseEntity와 ApiResponse 트레이드오프](java/ResponseEntity와%20ApiResponse%20트레이드오프.md)
 - [Spring Batch OFFSET 버그와 Cursor 페이징](java/Spring%20Batch%20OFFSET%20버그와%20Cursor%20페이징.md)
+- [Spring Batch chunk size와 lock 보유 시간](java/Spring%20Batch%20chunk%20size와%20lock%20보유%20시간.md)
 - [Spring DI/IoC와 Bean 생성 순서](java/Spring%20DI%20IoC와%20Bean%20생성%20순서.md)
 - [Spring 이벤트 리스너와 옵저버 패턴](java/Spring%20이벤트%20리스너와%20옵저버%20패턴.md)
 - [Strategy 패턴과 추상화](java/Strategy%20패턴과%20추상화.md)
