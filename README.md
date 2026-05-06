@@ -59,6 +59,7 @@
 - [Spring Batch chunk size와 lock 보유 시간](java/Spring%20Batch%20chunk%20size와%20lock%20보유%20시간.md)
 - [Spring DI/IoC와 Bean 생성 순서](java/Spring%20DI%20IoC와%20Bean%20생성%20순서.md)
 - [Spring 이벤트 리스너와 옵저버 패턴](java/Spring%20이벤트%20리스너와%20옵저버%20패턴.md)
+- [Strategy vs Template Method와 결합도](java/Strategy%20vs%20Template%20Method와%20결합도.md)
 - [Strategy 패턴과 추상화](java/Strategy%20패턴과%20추상화.md)
 - [record와 @Valid 동작 원리](java/record와%20@Valid%20동작%20원리.md)
 - [상태 전이 설계와 Enum 활용](java/상태%20전이%20설계와%20Enum%20활용.md)
