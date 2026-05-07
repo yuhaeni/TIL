@@ -86,6 +86,7 @@
 ### 🗄️ JPA
 
 - [JPA FetchType과 N+1 문제](jpa/JPA%20FetchType과%20N+1%20문제.md)
+- [JPA 핵심 용어 — fetch, dirty, flush, version, auto-flush](jpa/JPA%20핵심%20용어%20-%20fetch,%20dirty,%20flush,%20version,%20auto-flush.md)
 
 ### 🔴 Redis
 
