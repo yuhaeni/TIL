@@ -24,6 +24,9 @@ ORDER BY id LIMIT 10 OFFSET 0   -- 한 번의 fetch
 ---
 
 ### dirty — 스냅샷과 달라진 상태
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/76fdc80e-3250-4fa3-acee-444aa28ed438" />
+
+
 
 **dirty = 영속성 컨텍스트의 "스냅샷"(엔티티가 처음 영속화될 때 모습)과 달라진 상태.**
 
