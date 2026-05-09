@@ -1,4 +1,4 @@
-# JPA 핵심 용어 — fetch, dirty, flush, version, auto-flush
+# JPA 핵심 용어 — fetch, dirty, flush, version, auto-flush, stale
 
 > 날짜: 2026-05-07
 
@@ -125,9 +125,38 @@ List<Order> active = em.createQuery(
 
 ---
 
-### 통합 시나리오 — 5개 용어가 한 번에 폭발하는 상황
+### stale — DB와 동기화되지 않은 낡은 상태
 
-`JpaPagingItemReader transacted=true` + read-modify-write의 폭발 시나리오를 5개 용어로 재구성.
+**stale = DB의 현재 모습과 동기화되지 않은, 오래된(낡은) 상태.**
+
+일상 단어 그대로 — `stale bread`(굳은 빵)에서 따온 표현. **"fresh"의 반대말**.
+
+**시나리오로 보는 stale:**
+- DB의 진짜 모습: `version=1, status=COMPLETED`
+- Reader EM이 들고 있는 모습: `version=0, status=INCOMPLETED`
+- → Reader EM의 엔티티는 **stale** 상태 (DB가 이미 한 발 앞서감)
+
+**JPA/Hibernate가 던지는 예외:**
+```
+StaleStateException: Unexpected row count (expected row count 1 but was 0)
+```
+
+이름 그대로 **"낡은 상태로 UPDATE 시도했는데 영향 받은 행이 0건"** 임을 알리는 예외.
+
+**`StaleStateException` vs `OptimisticLockException`:**
+- 저수준(Hibernate): `StaleStateException`
+- JPA 표준 래퍼: `OptimisticLockException`
+- → JPA가 `StaleStateException`을 감싸서 던지는 형태
+
+→ stale은 **`@Version` 충돌의 일반화된 표현** — 낙관적 락 외에도 "내가 알던 그 데이터가 더 이상 그 모습이 아닌" 모든 상황에 쓰인다.
+
+> **면접 예상 질문:** `StaleStateException`과 `OptimisticLockException`의 관계는? "stale" 상태가 발생하는 일반적 조건은?
+
+---
+
+### 통합 시나리오 — 6개 용어가 한 번에 폭발하는 상황
+
+`JpaPagingItemReader transacted=true` + read-modify-write의 폭발 시나리오를 6개 용어로 재구성.
 
 ```
 [chunk N]
@@ -139,14 +168,15 @@ List<Order> active = em.createQuery(
 
 [chunk N+1]
 4. 다음 page SELECT 직전, Reader EM auto-flush 시도
+   ⚠️ Reader EM이 들고 있는 엔티티는 이미 stale 상태!
 5. UPDATE settlement SET version=1 WHERE id=1 AND version=0
 6. DB version은 이미 1 → 0 row affected
-7. 💥 OptimisticLockException → batch FAILED
+7. 💥 StaleStateException → OptimisticLockException → batch FAILED
 ```
 
 **해결:** `reader.setTransacted(false)` → Reader가 Step 트랜잭션의 EM을 그대로 사용 → **EM 1개로 통합** → Writer commit 결과를 Reader도 같은 EM으로 보고 있어 stale state 발생 여지 자체 소멸.
 
-> **면접 예상 질문:** Reader EM과 Writer EM이 분리됐을 때 fetch / dirty / flush / version / auto-flush가 어떻게 충돌하는지 시나리오로 설명해보라.
+> **면접 예상 질문:** Reader EM과 Writer EM이 분리됐을 때 fetch / dirty / flush / version / auto-flush / stale 6개 개념이 어떻게 연쇄 폭발하는지 시나리오로 설명해보라.
 
 ---
 
@@ -157,7 +187,8 @@ List<Order> active = em.createQuery(
 - **flush** = 변경사항을 SQL로 내보내기 (≠ commit, 아직 롤백 가능)
 - **`@Version`** = 낙관적 락의 충돌 감지 컬럼 → `WHERE version=N`이 0건 매칭이면 `OptimisticLockException`
 - **auto-flush** = 쿼리 실행 직전 자동 flush → 메모리/DB 일관성 보장
-- 5개 용어가 함께 폭발하는 대표 사례: **`JpaPagingItemReader transacted=true` + read-modify-write** → `transacted(false)`로 EM 통합해 해결
+- **stale** = DB와 동기화되지 않은 낡은 상태 → `StaleStateException`(저수준) → `OptimisticLockException`(JPA 표준 래퍼)
+- 6개 용어가 함께 폭발하는 대표 사례: **`JpaPagingItemReader transacted=true` + read-modify-write** → `transacted(false)`로 EM 통합해 해결
 
 ## 참고
 
