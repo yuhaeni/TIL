@@ -46,6 +46,7 @@
 - [@Transactional 전파 속성](java/@Transactional%20전파%20속성.md)
 - [@UtilityClass와 final, static](java/@UtilityClass와%20final,%20static.md)
 - [Arrays.sort() 내부 동작](java/Arrays.sort()%20내부%20동작.md)
+- [Cursor 페이징 구현 — `getPage()=0`과 멱등 restart](java/Cursor%20페이징%20구현%20-%20getPage%200과%20멱등%20restart.md)
 - [DTO 패턴, 관심사 분리와 OCP](java/DTO%20패턴,%20관심사%20분리와%20OCP.md)
 - [GlobalExceptionHandler와 전역 예외 처리](java/GlobalExceptionHandler와%20전역%20예외%20처리.md)
 - [JVM 메모리와 GC, 리플렉션 최적화](java/JVM%20메모리와%20GC,%20리플렉션%20최적화.md)
