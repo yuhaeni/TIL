@@ -99,9 +99,36 @@
 
 ## 📚 TIL 정리 모드
 
-이 레포는 **TIL(Today I Learned)** 저장소입니다. 러버덕 디버깅으로 학습이 충분히 진행됐다 싶으면 사용자가 `/til` 슬래시 커맨드를 호출해 그 대화 내용을 정리·커밋·푸시합니다.
+학습이 충분히 진행됐다 싶으면 사용자가 `/til` 슬래시 커맨드를 호출해 대화 내용을 정리·커밋·푸시합니다. `/til` 호출 시점부터는 **오리 페르소나에서 벗어나** 슬래시 커맨드 지시(`.claude/commands/til.md`)에 따라 정리 작업에 집중합니다.
 
-- `/til` 호출 시점부터는 **오리 페르소나에서 벗어나** 슬래시 커맨드의 지시(`.claude/commands/til.md`)에 따라 정리 작업에 집중합니다.
-- TIL 본문은 [_template.md](_template.md) 구조를 따르며, 면접 예상 질문은 각 키워드 아래 `> **면접 예상 질문:**` 한 줄만 추가합니다 (답변 X).
-- README.md 는 GitHub Actions 가 main push 시 자동 업데이트하므로 절대 손대지 않습니다.
-- 카테고리 디렉토리는 `algorithm`, `database`, `docker`, `java`, `jpa`, `kafka`, `kotlin`, `monitoring`, `operating-system`, `redis`, `system-design` (실제 디렉토리는 `ls` 로 항상 확인).
+## Repository purpose
+
+Personal TIL (Today I Learned) repo, all content in Korean. No build/lint/test — every "task" here is authoring or editing a markdown note.
+
+## TIL file structure
+
+`_template.md` is the canonical structure. Every TIL must have:
+
+- A single H1 (`# 제목`) on line 1 — the README generator extracts this as the link title.
+- A `> 날짜: YYYY-MM-DD` line.
+- Content under `## 내용`, broken into `### 키워드 N` subsections, each followed by a `> **면접 예상 질문:** ...` blockquote and a `---` separator.
+- A trailing `## 학습 정리` (bullet summary) and `## 참고` (links).
+
+The user's preferred ordering is: concept explanation first, then a clearly separated 면접 예상 질문 section per keyword. Don't inline interview questions into the explanation.
+
+## Adding new TILs
+
+1. Place the file under the matching category directory at the repo root: `operating-system/`, `system-design/`, `docker/`, `java/`, `algorithm/`, `kafka/`, `kotlin/`, `jpa/`, `redis/`, `database/`, `monitoring/`.
+2. Filenames are Korean with spaces — keep them human-readable; the README script URL-encodes spaces to `%20`.
+3. **Do not hand-edit `README.md`.** The `Update README` GitHub Actions workflow regenerates the category listing on every push to `main` and commits as `github-actions[bot]`. Editing it locally creates merge conflicts with the bot.
+
+## README auto-generation
+
+- Workflow: `.github/workflows/update-readme.yml` — triggers on push to `main` when any of the watched category dirs change.
+- Script: `.github/scripts/update-readme.sh` — replaces everything between `<!-- TIL_START -->` and `<!-- TIL_END -->` in `README.md`. Title comes from the first `# ` line of each `.md` file.
+- **Adding a brand-new category** requires three coordinated edits: create the directory, add its `paths:` entry in the workflow YAML, and add a `generate_section "<dir>" "<emoji label>"` line in the shell script. Without all three, the new category will not appear in `README.md`.
+
+## Conventions worth preserving
+
+- Each TIL is self-contained — don't refactor across files or extract "shared" notes.
+- Keep tables, code blocks, and the `면접 예상 질문` callout style consistent with neighbors in the same category when editing.
