@@ -96,6 +96,7 @@
 ### 🛢️ Database
 
 - [PostgreSQL 인덱스와 B+Tree](database/PostgreSQL%20인덱스와%20B+Tree.md)
+- [Spring Batch chunk size 성능 트레이드오프 — commit overhead, WAL fsync, lock 보유](database/Spring%20Batch%20chunk%20size%20성능%20트레이드오프%20-%20commit%20overhead,%20WAL%20fsync,%20lock%20보유.md)
 
 ### 📊 Monitoring
 
