@@ -87,6 +87,7 @@
 ### 🗄️ JPA
 
 - [JPA FetchType과 N+1 문제](jpa/JPA%20FetchType과%20N+1%20문제.md)
+- [JPA LAZY 프록시 함정 — diary.user.id 추가 쿼리, Kotlin getter, findByIdAndUserId](jpa/JPA%20LAZY%20프록시%20함정%20-%20diary.user.id%20추가%20쿼리,%20Kotlin%20getter,%20findByIdAndUserId.md)
 - [JPA 핵심 용어 — fetch, dirty, flush, version, auto-flush, stale](jpa/JPA%20핵심%20용어%20-%20fetch,%20dirty,%20flush,%20version,%20auto-flush.md)
 
 ### 🔴 Redis
