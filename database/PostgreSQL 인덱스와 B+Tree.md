@@ -6,6 +6,9 @@
 
 ### B-Tree vs B+Tree
 
+<img width="662" height="275" alt="image" src="https://github.com/user-attachments/assets/a4bc9c75-464e-4d2e-a1d7-665032555309" />
+
+
 PostgreSQL은 인덱스 기본 구조로 **B+Tree**를 채택한다.
 
 **핵심 차이점:**
@@ -115,7 +118,7 @@ MySQL InnoDB는 PK 조회 시 자연스럽게 클러스터드라 빠르지만, *
 → 결과가 전체 데이터의 대부분이면 쭉 훑는 게 더 빠름
 ```
 
-PostgreSQL **쿼리 플래너(Query Planner)** 가 통계 정보를 바탕으로 자동으로 판단한다. 통계가 잘못되어 있으면 잘못된 선택을 할 수 있어 `ANALYZE`로 통계를 최신 상태로 유지하는 것이 중요하다.
+PostgreSQL **쿼리 플래너(Query Planner)** 가 통계 정보(Statistics)를 바탕으로 자동으로 판단한다. 통계가 잘못되어 있으면 잘못된 선택을 할 수 있어 `ANALYZE`로 통계를 최신 상태로 유지하는 것이 중요하다.
 
 > **면접 예상 질문:** 인덱스가 있어도 풀 테이블 스캔이 더 빠른 경우는? 쿼리 플래너는 무엇을 보고 판단하는가?
 
