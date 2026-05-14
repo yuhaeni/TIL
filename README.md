@@ -32,6 +32,7 @@
 - [대용량 트래픽 캐시 설계 — Cache-Aside, W-TinyLFU, 다층 캐시, Cache Stampede](system-design/대용량%20트래픽%20캐시%20설계%20-%20Cache-Aside,%20W-TinyLFU,%20다층%20캐시,%20Cache%20Stampede.md)
 - [메세지 큐](system-design/메세지%20큐.md)
 - [무상태(Stateless) 웹 계층](system-design/무상태(Stateless)%20웹%20계층.md)
+- [분산 환경 동시성 제어 — DB 락 vs Redis 분산 락, Redlock, Fencing Token](system-design/분산%20환경%20동시성%20제어%20-%20DB%20락%20vs%20Redis%20분산%20락,%20Redlock,%20Fencing%20Token.md)
 - [애플리케이션 캐시 전략(LRU)](system-design/애플리케이션%20캐시%20전략(LRU).md)
 
 ### 🐳 Docker
