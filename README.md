@@ -56,6 +56,7 @@
 - [JpaPagingItemReader `transacted` 함정과 영속성 컨텍스트](java/JpaPagingItemReader%20transacted%20함정과%20영속성%20컨텍스트.md)
 - [LRU 캐시와 멀티스레드 동시성](java/LRU%20캐시와%20멀티스레드%20동시성.md)
 - [LinkedHashMap과 Map.merge()](java/LinkedHashMap과%20Map.merge().md)
+- [OOM 진단과 메모리 누수 해결 — GC Roots, 참조, Caffeine](java/OOM%20진단과%20메모리%20누수%20해결%20-%20GC%20Roots,%20참조,%20Caffeine.md)
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
 - [ResponseEntity와 ApiResponse 트레이드오프](java/ResponseEntity와%20ApiResponse%20트레이드오프.md)
 - [Spring Batch OFFSET 버그와 Cursor 페이징](java/Spring%20Batch%20OFFSET%20버그와%20Cursor%20페이징.md)
