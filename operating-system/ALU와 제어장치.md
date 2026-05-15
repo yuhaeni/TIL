@@ -10,6 +10,10 @@
 
 ### CPU 내부 구성 요소
 
+<img width="201" height="212" alt="image" src="https://github.com/user-attachments/assets/335b05ba-b60c-4102-92bd-14c3502b7327" />
+
+
+
 - **산술논리연산장치(ALU)**: 계산을 담당하는 장치
 - **레지스터**: CPU 내부의 임시 저장 장치
 - **제어장치**: 제어 신호라는 전기 신호를 내보내고, 명령어를 해석하는 장치
