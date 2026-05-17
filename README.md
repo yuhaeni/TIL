@@ -56,6 +56,7 @@
 - [JpaPagingItemReader `transacted` 함정과 영속성 컨텍스트](java/JpaPagingItemReader%20transacted%20함정과%20영속성%20컨텍스트.md)
 - [LRU 캐시와 멀티스레드 동시성](java/LRU%20캐시와%20멀티스레드%20동시성.md)
 - [LinkedHashMap과 Map.merge()](java/LinkedHashMap과%20Map.merge().md)
+- [OOM 면접 답변 — 그래프 패턴 진단, Stack-Heap 참조, STW 비즈니스 임팩트](java/OOM%20면접%20답변%20-%20그래프%20패턴%20진단,%20Stack-Heap%20참조,%20STW%20비즈니스%20임팩트.md)
 - [OOM 진단과 메모리 누수 해결 — GC Roots, 참조, Caffeine](java/OOM%20진단과%20메모리%20누수%20해결%20-%20GC%20Roots,%20참조,%20Caffeine.md)
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
 - [REQUIRES_NEW 커넥션 풀 데드락과 Outbox 패턴 — phase별 이벤트 분리, HikariCP 메트릭](java/REQUIRES_NEW%20커넥션%20풀%20데드락과%20Outbox%20패턴%20-%20phase별%20이벤트%20분리,%20HikariCP%20메트릭.md)
