@@ -64,6 +64,7 @@
 - [SOLID 원칙 — SRP, LSP, ISP, DIP (스크래핑 시스템·Spring DI 예시)](java/SOLID%20원칙%20-%20SRP,%20LSP,%20ISP,%20DIP%20(스크래핑%20시스템·Spring%20DI%20예시).md)
 - [Spring Batch OFFSET 버그와 Cursor 페이징](java/Spring%20Batch%20OFFSET%20버그와%20Cursor%20페이징.md)
 - [Spring Batch chunk size와 lock 보유 시간](java/Spring%20Batch%20chunk%20size와%20lock%20보유%20시간.md)
+- [Spring Boot 동작 원리 — HTTP 요청 처리, DispatcherServlet, Filter/Interceptor/AOP, Thread per Request](java/Spring%20Boot%20동작%20원리%20-%20HTTP%20요청%20처리,%20DispatcherServlet,%20Filter%20Interceptor%20AOP,%20Thread%20per%20Request.md)
 - [Spring DI/IoC와 Bean 생성 순서](java/Spring%20DI%20IoC와%20Bean%20생성%20순서.md)
 - [Spring 이벤트 리스너와 옵저버 패턴](java/Spring%20이벤트%20리스너와%20옵저버%20패턴.md)
 - [Strategy vs Template Method와 결합도](java/Strategy%20vs%20Template%20Method와%20결합도.md)
