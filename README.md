@@ -51,6 +51,7 @@
 - [Cursor 페이징 구현 — `getPage()=0`과 멱등 restart](java/Cursor%20페이징%20구현%20-%20getPage%200과%20멱등%20restart.md)
 - [DTO 패턴, 관심사 분리와 OCP](java/DTO%20패턴,%20관심사%20분리와%20OCP.md)
 - [GlobalExceptionHandler와 전역 예외 처리](java/GlobalExceptionHandler와%20전역%20예외%20처리.md)
+- [JVM 런타임 데이터 영역 5개 — 공유 vs 스레드별, Stack, Method Area, PC Register](java/JVM%20런타임%20데이터%20영역%205개%20-%20공유%20vs%20스레드별,%20Stack,%20Method%20Area,%20PC%20Register.md)
 - [JVM 메모리와 GC, 리플렉션 최적화](java/JVM%20메모리와%20GC,%20리플렉션%20최적화.md)
 - [Java 자료구조 비교(ArrayList vs LinkedList, Stack vs ArrayDeque)](java/Java%20자료구조%20비교(ArrayList%20vs%20LinkedList,%20Stack%20vs%20ArrayDeque).md)
 - [JpaPagingItemReader `transacted` 함정과 영속성 컨텍스트](java/JpaPagingItemReader%20transacted%20함정과%20영속성%20컨텍스트.md)
