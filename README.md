@@ -49,6 +49,7 @@
 - [@UtilityClass와 final, static](java/@UtilityClass와%20final,%20static.md)
 - [Arrays.sort() 내부 동작](java/Arrays.sort()%20내부%20동작.md)
 - [Cursor 페이징 구현 — `getPage()=0`과 멱등 restart](java/Cursor%20페이징%20구현%20-%20getPage%200과%20멱등%20restart.md)
+- [DIP 심화 — 의존의 의미, 추상의 안정성, 인터페이스 이름 짓기, Mock 주입](java/DIP%20심화%20-%20의존의%20의미,%20추상의%20안정성,%20인터페이스%20이름%20짓기,%20Mock%20주입.md)
 - [DTO 패턴, 관심사 분리와 OCP](java/DTO%20패턴,%20관심사%20분리와%20OCP.md)
 - [GlobalExceptionHandler와 전역 예외 처리](java/GlobalExceptionHandler와%20전역%20예외%20처리.md)
 - [JVM 런타임 데이터 영역 5개 — 공유 vs 스레드별, Stack, Method Area, PC Register](java/JVM%20런타임%20데이터%20영역%205개%20-%20공유%20vs%20스레드별,%20Stack,%20Method%20Area,%20PC%20Register.md)
