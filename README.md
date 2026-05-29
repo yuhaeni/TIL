@@ -66,6 +66,7 @@
 - [ResponseEntity와 ApiResponse 트레이드오프](java/ResponseEntity와%20ApiResponse%20트레이드오프.md)
 - [SOLID 원칙 — SRP, LSP, ISP, DIP (스크래핑 시스템·Spring DI 예시)](java/SOLID%20원칙%20-%20SRP,%20LSP,%20ISP,%20DIP%20(스크래핑%20시스템·Spring%20DI%20예시).md)
 - [Spring Batch OFFSET 버그와 Cursor 페이징](java/Spring%20Batch%20OFFSET%20버그와%20Cursor%20페이징.md)
+- [Spring Batch Reader 옵션 — fetchSize, chunk size, maxItemCount, maxRows](java/Spring%20Batch%20Reader%20옵션%20-%20fetchSize,%20chunk%20size,%20maxItemCount,%20maxRows.md)
 - [Spring Batch chunk size와 lock 보유 시간](java/Spring%20Batch%20chunk%20size와%20lock%20보유%20시간.md)
 - [Spring Bean 라이프사이클과 Graceful Shutdown — DI 3가지, final, Singleton 멀티스레드, SIGTERM](java/Spring%20Bean%20라이프사이클과%20Graceful%20Shutdown%20-%20DI,%20final,%20Singleton%20멀티스레드,%20SIGTERM.md)
 - [Spring Boot 동작 원리 — HTTP 요청 처리, DispatcherServlet, Filter/Interceptor/AOP, Thread per Request](java/Spring%20Boot%20동작%20원리%20-%20HTTP%20요청%20처리,%20DispatcherServlet,%20Filter%20Interceptor%20AOP,%20Thread%20per%20Request.md)
