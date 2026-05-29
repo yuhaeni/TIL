@@ -111,6 +111,7 @@
 
 ### 🛢️ Database
 
+- [NOT EXISTS 최적화 — Anti Join, Short-circuit, NULL 3치 논리, SELECT 1](database/NOT%20EXISTS%20최적화%20—%20Anti%20Join,%20Short-circuit,%20NULL%203치%20논리,%20SELECT%201.md)
 - [PostgreSQL 인덱스와 B+Tree](database/PostgreSQL%20인덱스와%20B+Tree.md)
 - [Spring Batch chunk size 성능 트레이드오프 — commit overhead, WAL fsync, lock 보유](database/Spring%20Batch%20chunk%20size%20성능%20트레이드오프%20-%20commit%20overhead,%20WAL%20fsync,%20lock%20보유.md)
 - [UNIQUE 제약과 인덱스 — invariant, selectivity, CONSTRAINT vs INDEX](database/UNIQUE%20제약과%20인덱스%20-%20invariant,%20selectivity,%20CONSTRAINT%20vs%20INDEX.md)
