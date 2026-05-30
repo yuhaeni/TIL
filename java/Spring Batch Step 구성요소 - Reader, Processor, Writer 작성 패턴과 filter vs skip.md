@@ -75,6 +75,49 @@ fun interface ItemProcessor<I, O> {
 
 ---
 
+### Writer 구현 — 람다 vs 별도 클래스, 의존성 주입과 단일 책임 원칙
+
+예시 코드의 Writer가 람다인 것은 **"필수"가 아니라 임시 stub**이기 때문이다. `// TODO`, `stub`, `println` 이 미완성 코드라는 단서다.
+
+```kotlin
+ItemWriter { chunk ->
+    // TODO: RabbitMQ publish (notification.exchange / notification.diary-reminder)
+    chunk.items.forEach { msg -> println("[DiaryReminder] publish stub: $msg") }
+}
+```
+
+Writer도 표준 구현체(`JpaItemWriter`, `JdbcBatchItemWriter`, `AmqpItemWriter` 등)를 빌더로 쓸 수 있다. **람다냐 빌더냐는 규칙이 아니라 선택**이다.
+- 표준 구현체를 쓸 거면 → 빌더가 편함
+- 직접 로직을 짤 거면(stub이든 커스텀이든) → 람다가 간단함
+
+**의존성 주입 (DI)** — RabbitMQ publish를 구현하려면 `RabbitTemplate`이 필요하다. `build.gradle`에 `spring-boot-starter-amqp`를 추가하면 Spring Boot가 `RabbitTemplate` 빈을 자동 생성하고, `@Bean` 메서드 파라미터로 받기만 하면 된다. 람다 안에서는 **클로저**로 그 빈을 캡처해 쓴다.
+
+```kotlin
+@Bean
+@StepScope
+fun diaryReminderWriter(
+    rabbitTemplate: RabbitTemplate,   // ← DI로 주입 (JobRepository 받던 것과 동일 패턴)
+): ItemWriter<DiaryReminderMessage> =
+    ItemWriter { chunk ->
+        chunk.items.forEach { msg ->
+            rabbitTemplate.convertAndSend("notification.exchange", "notification.diary-reminder", msg)
+        }
+    }
+```
+
+**람다 vs 별도 클래스** — Writer 책임이 늘어나면(라우팅 키 동적 결정, 발송 실패 재시도, 로깅 등) 별도 클래스로 분리하는 게 낫다.
+
+| 방식 | 적합한 경우 | 한계 |
+|------|------|------|
+| 람다 `ItemWriter { ... }` | 짧고 단순한 로직 | 책임이 늘면 `@Bean` 메서드가 비대해짐 |
+| 별도 클래스 `class DiaryReminderWriter : ItemWriter<...>` | 책임이 여러 개 (발송/재시도/로깅/라우팅) | 단순 로직엔 과함 |
+
+별도 클래스가 나은 이유의 핵심은 **단일 책임 원칙 (SRP, Single Responsibility Principle)** — SOLID의 'S'. "클래스가 변경되는 이유는 단 하나여야 한다". 이는 Spring Batch 6에서 `.chunk(size, transactionManager)`가 `.chunk(size).transactionManager(tm)`로 분리된 것과 **같은 원리**다. 메서드든 클래스든 하나의 책임만 향한다.
+
+> **면접 예상 질문:** Spring Batch에서 ItemWriter를 람다로 작성하는 것과 별도 클래스로 분리하는 것은 어떤 트레이드오프가 있는가? 어떤 기준으로 선택하는가? 이 판단이 단일 책임 원칙(SRP)과 어떻게 연결되는가?
+
+---
+
 ### ItemProcessor null 반환 — 의도된 필터링
 
 Processor가 `null`을 반환하면 그 item은 **Writer로 전달되지 않는다**. 단, **chunk 전체가 건너뛰는 게 아니라 그 item 하나만** 빠진다.
@@ -123,3 +166,4 @@ Spring Batch는 이 케이스를 메타데이터에 **`filterCount`** 로 집계
 - ItemProcessor가 **`null`을 반환하면 그 item만 Writer로 안 넘어감** (chunk 전체가 빠지는 게 아님). `filterCount`로 집계.
 - **filter (null 반환)** 와 **skip (예외 격리)** 는 다른 개념. filter는 의도된 필터링·트랜잭션 그대로 commit, skip은 예외 발생·rollback·재시도·격리.
 - 비즈니스 룰 필터링에 예외를 던지지 말 것 — 트랜잭션을 굳이 rollback시킬 이유가 없다. `null` 반환이 정답.
+- 람다 Writer도 `@Bean` 파라미터로 `RabbitTemplate` 등 **의존성을 DI 받아 클로저로 캡처**해서 쓸 수 있다. 책임이 늘어나면 **별도 클래스로 분리(SRP)** — `.chunk()` API 분리와 같은 원리.
