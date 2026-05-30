@@ -78,6 +78,32 @@ chunk 단위 트랜잭션이 없다면:
 
 ---
 
+### API 위치의 의미 — StepBuilder vs .chunk()
+
+두 빈을 받는 **위치가 다른 것**이 우연이 아니다. 각 빈의 **적용 범위**가 호출 위치에 그대로 드러나도록 의도된 설계다.
+
+```kotlin
+StepBuilder(STEP_NAME, jobRepository)                              // ← Step 전체 책임
+    .chunk<DiaryReminderResult, DiaryReminderMessage>(
+        CHUNK_SIZE, transactionManager                             // ← chunk 단위 책임
+    )
+    .reader(diaryReminderReader)
+    .processor(diaryReminderProcessor)
+    .writer(diaryReminderWriter)
+    .build()
+```
+
+| 위치 | 빈 | 적용 범위 |
+|------|------|------|
+| `StepBuilder(name, jobRepository)` | `JobRepository` | **Step 전체** (시작/종료/STATUS/count 집계) |
+| `.chunk(size, transactionManager)` | `PlatformTransactionManager` | **chunk 단위** (commit/rollback 경계) |
+
+만약 `.chunk()` 대신 `.tasklet()` 으로 Step을 구성하면 `transactionManager`는 **tasklet 한 번 실행 전체**를 묶는 트랜잭션이 된다. 같은 빈이라도 어떤 Step 빌더 메서드에 넘기느냐에 따라 트랜잭션 경계가 달라진다.
+
+> **면접 예상 질문:** Spring Batch의 StepBuilder에서 jobRepository는 생성자 인자로, transactionManager는 .chunk() 인자로 받는다. 이렇게 받는 위치가 다른 이유는 무엇인가? .tasklet()으로 Step을 만들 때 transactionManager의 적용 범위는 어떻게 달라지는가?
+
+---
+
 ### skip 동작 흐름 — rollback → 재시도 → 격리
 
 skip은 "한 건 그냥 건너뛴다"가 아니라 **rollback + 한 건씩 재처리 + 문제 item만 격리**하는 영리한 메커니즘이다.
@@ -149,6 +175,7 @@ Job에 Step이 3개 있고 2번째 Step에서 실패한 경우, 재시작 시 Sp
 - **`JobRepository`** = Job/Step 메타데이터 기록자 (`BATCH_JOB_EXECUTION`, `BATCH_STEP_EXECUTION` 등에 기록). 재시작과 이력 추적의 근거.
 - **`PlatformTransactionManager`** = chunk 단위 트랜잭션 실행자. 예외 발생 시 자기 판단으로 rollback, JobRepository를 참조하지 않음.
 - 두 빈은 **참조 관계가 아니라 협력 관계** — 각자 자기 책임을 다하면서 Step을 함께 굴린다.
+- `StepBuilder(name, jobRepository)` vs `.chunk(size, transactionManager)` — **빈을 받는 위치가 곧 적용 범위**다. JobRepository는 Step 전체, TransactionManager는 chunk 단위. `.tasklet()`이면 tasklet 실행 전체로 경계가 달라진다.
 - skip은 "한 건 건너뛰기"가 아니라 **chunk rollback → 한 건씩 재처리 → 문제 item만 격리** 메커니즘.
 - Spring Boot의 `spring-batch-starter`가 두 빈을 자동 등록 (IoC/DI). IoC는 제어의 역전, DI는 주입 방식, DIP는 SOLID 설계 원칙 — 셋은 다른 개념.
 - Job과 Step이 **둘 다** JobRepository를 받는 이유: Job 레벨(전체 메타정보)과 Step 레벨(세부 통계)을 각각 기록하기 위함.
