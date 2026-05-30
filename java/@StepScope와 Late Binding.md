@@ -90,6 +90,50 @@ public JpaPagingItemReader<Settlement> settlementReader(
 
 ---
 
+### @StepScope는 언제 생략할 수 있나 — stateless 빈의 판단 기준
+
+`@StepScope`를 "Reader/Processor/Writer엔 무조건 붙이는 것"으로 외우면 오히려 본질을 놓친다. **붙이는 이유가 없으면 생략해도 된다.** 붙이는 이유는 딱 두 가지뿐이다.
+
+| 붙이는 이유 | 필요 조건 |
+|------|------|
+| **Late Binding** | `@Value("#{jobParameters[...]}")` 등 런타임 컨텍스트를 주입받음 |
+| **상태 격리** | 빈이 내부 상태(카운터, 커서 위치 등)를 가짐 + Job이 여러 번/동시 실행됨 |
+
+**판단 플로우:**
+```
+jobParameters / stepExecutionContext 받나?  ──Yes──▶ @StepScope 필요 (Late Binding)
+        │ No
+        ▼
+빈이 자기 상태를 갖나? (Job 여러 번 실행 시 오염 위험)  ──Yes──▶ @StepScope 권장 (상태 격리)
+        │ No
+        ▼
+   stateless → @StepScope 생략 가능 (싱글톤으로 충분)
+```
+
+**예시 — RabbitMQ publish만 하는 Writer:**
+```kotlin
+@Bean
+fun diaryReminderWriter(   // @StepScope 없음
+    rabbitTemplate: RabbitTemplate,
+): ItemWriter<DiaryReminderMessage> =
+    ItemWriter { chunk ->
+        chunk.items.forEach { msg ->
+            rabbitTemplate.convertAndSend("notification.exchange", "...", msg)
+        }
+    }
+```
+- `jobParameters` 안 받음 → Late Binding 불필요
+- 받은 chunk를 그대로 발송만 함, 자기 상태 없음(stateless) → 상태 격리 불필요
+- → **싱글톤으로 둬도 OK.** 인스턴스 1개 재사용이라 약간 더 가볍기도 하다.
+
+**트레이드오프:** `@StepScope`는 매 Step 실행마다 새 인스턴스를 만드므로 약간의 생성 오버헤드가 있다 (보통 무시할 수준). 반대로 stateless 빈에 일괄로 `@StepScope`를 붙이는 팀도 많은데, 이는 성능보다 **일관성/관례**를 택한 것이다.
+
+> 면접 답변 팁: "현재는 stateless라 생략했지만, 발송 카운터 같은 상태가 생기거나 `jobParameters`를 받게 되면 그때 `@StepScope`를 추가하겠습니다." — 현재 판단 + 변경 가능성 인지를 함께 보여주면 좋다.
+
+> **면접 예상 질문:** `jobParameters`를 받지 않는 stateless한 ItemWriter에도 `@StepScope`를 붙여야 하는가? 붙일 때와 생략할 때의 판단 기준은 무엇인가?
+
+---
+
 ### Job, Step, Reader/Processor/Writer 구조
 
 ```
@@ -257,6 +301,7 @@ public JpaPagingItemReader<Settlement> settlementReader(
 - **`jobParameters` / `jobExecutionContext` / `stepExecutionContext`** 는 Spring Batch가 SpEL 컨텍스트에 미리 등록하는 약속된 변수
 - 자바 어노테이션은 컴파일 상수만 받기 때문에 **SpEL 문자열 방식이 표현력 측면에서 유리**
 - SpEL의 컴파일 검증 부재 단점은 **`public static final` 상수 추출**로 보완
+- **`@StepScope`는 무조건이 아니다** — 붙이는 이유는 ①Late Binding(런타임 값 주입) ②상태 격리(stateful + 다회/동시 실행) 둘 뿐. `jobParameters`도 안 받고 stateless하면 **생략 가능**(싱글톤으로 충분). 일괄로 붙이는 건 성능이 아닌 일관성/관례 선택
 
 ## 참고
 
