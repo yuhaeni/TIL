@@ -68,6 +68,7 @@
 - [Spring Batch OFFSET 버그와 Cursor 페이징](java/Spring%20Batch%20OFFSET%20버그와%20Cursor%20페이징.md)
 - [Spring Batch Reader 옵션 — fetchSize, chunk size, maxItemCount, maxRows](java/Spring%20Batch%20Reader%20옵션%20-%20fetchSize,%20chunk%20size,%20maxItemCount,%20maxRows.md)
 - [Spring Batch chunk size와 lock 보유 시간](java/Spring%20Batch%20chunk%20size와%20lock%20보유%20시간.md)
+- [Spring Batch 핵심 빈 — JobRepository, PlatformTransactionManager, 메타데이터 테이블](java/Spring%20Batch%20핵심%20빈%20-%20JobRepository,%20PlatformTransactionManager,%20메타데이터%20테이블.md)
 - [Spring Bean 라이프사이클과 Graceful Shutdown — DI 3가지, final, Singleton 멀티스레드, SIGTERM](java/Spring%20Bean%20라이프사이클과%20Graceful%20Shutdown%20-%20DI,%20final,%20Singleton%20멀티스레드,%20SIGTERM.md)
 - [Spring Boot 동작 원리 — HTTP 요청 처리, DispatcherServlet, Filter/Interceptor/AOP, Thread per Request](java/Spring%20Boot%20동작%20원리%20-%20HTTP%20요청%20처리,%20DispatcherServlet,%20Filter%20Interceptor%20AOP,%20Thread%20per%20Request.md)
 - [Spring Boot 부팅 과정 — JAR vs WAR, 자동 설정, ComponentScan, IoC 컨테이너](java/Spring%20Boot%20부팅%20과정%20-%20JAR%20WAR,%20자동%20설정,%20ComponentScan,%20IoC%20컨테이너.md)
