@@ -67,6 +67,7 @@
 - [SOLID 원칙 — SRP, LSP, ISP, DIP (스크래핑 시스템·Spring DI 예시)](java/SOLID%20원칙%20-%20SRP,%20LSP,%20ISP,%20DIP%20(스크래핑%20시스템·Spring%20DI%20예시).md)
 - [Spring Batch OFFSET 버그와 Cursor 페이징](java/Spring%20Batch%20OFFSET%20버그와%20Cursor%20페이징.md)
 - [Spring Batch Reader 옵션 — fetchSize, chunk size, maxItemCount, maxRows](java/Spring%20Batch%20Reader%20옵션%20-%20fetchSize,%20chunk%20size,%20maxItemCount,%20maxRows.md)
+- [Spring Batch Step 구성요소 — Reader/Processor/Writer 작성 패턴과 filter vs skip](java/Spring%20Batch%20Step%20구성요소%20-%20Reader,%20Processor,%20Writer%20작성%20패턴과%20filter%20vs%20skip.md)
 - [Spring Batch chunk size와 lock 보유 시간](java/Spring%20Batch%20chunk%20size와%20lock%20보유%20시간.md)
 - [Spring Batch 핵심 빈 — JobRepository, PlatformTransactionManager, 메타데이터 테이블](java/Spring%20Batch%20핵심%20빈%20-%20JobRepository,%20PlatformTransactionManager,%20메타데이터%20테이블.md)
 - [Spring Bean 라이프사이클과 Graceful Shutdown — DI 3가지, final, Singleton 멀티스레드, SIGTERM](java/Spring%20Bean%20라이프사이클과%20Graceful%20Shutdown%20-%20DI,%20final,%20Singleton%20멀티스레드,%20SIGTERM.md)
