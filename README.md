@@ -122,6 +122,7 @@
 
 ### 📊 Monitoring
 
+- [AWS Lightsail Container Service에 Prometheus·Grafana 배포 — docker-compose 패턴 변환](monitoring/AWS%20Lightsail%20Container%20Service에%20Prometheus,%20Grafana%20배포%20-%20docker-compose%20패턴%20변환.md)
 - [Spring Batch 성능 측정 — PromQL과 Grafana](monitoring/Spring%20Batch%20성능%20측정%20PromQL과%20Grafana.md)
 
 <!-- TIL_END -->
