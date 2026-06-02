@@ -63,6 +63,7 @@
 - [OOM 면접 답변 — 그래프 패턴 진단, Stack-Heap 참조, STW 비즈니스 임팩트](java/OOM%20면접%20답변%20-%20그래프%20패턴%20진단,%20Stack-Heap%20참조,%20STW%20비즈니스%20임팩트.md)
 - [OOM 진단과 메모리 누수 해결 — GC Roots, 참조, Caffeine](java/OOM%20진단과%20메모리%20누수%20해결%20-%20GC%20Roots,%20참조,%20Caffeine.md)
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
+- [Quartz Job DI와 JobLauncher — 기본 생성자, lateinit, createBean, JobInstance 재실행, JobOperator 전환](java/Quartz%20Job%20DI와%20JobLauncher%20-%20기본%20생성자,%20lateinit,%20JobInstance%20재실행,%20JobOperator%20전환.md)
 - [REQUIRES_NEW 커넥션 풀 데드락과 Outbox 패턴 — phase별 이벤트 분리, HikariCP 메트릭](java/REQUIRES_NEW%20커넥션%20풀%20데드락과%20Outbox%20패턴%20-%20phase별%20이벤트%20분리,%20HikariCP%20메트릭.md)
 - [ResponseEntity와 ApiResponse 트레이드오프](java/ResponseEntity와%20ApiResponse%20트레이드오프.md)
 - [SOLID 원칙 — SRP, LSP, ISP, DIP (스크래핑 시스템·Spring DI 예시)](java/SOLID%20원칙%20-%20SRP,%20LSP,%20ISP,%20DIP%20(스크래핑%20시스템·Spring%20DI%20예시).md)
