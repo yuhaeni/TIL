@@ -42,6 +42,7 @@
 
 ### ☕ Java
 
+- [@ConfigurationProperties — 빈 등록 3가지 방식과 생성자 바인딩](java/@ConfigurationProperties%20-%20빈%20등록%203가지%20방식과%20생성자%20바인딩.md)
 - [@StepScope와 Late Binding](java/@StepScope와%20Late%20Binding.md)
 - [@Transactional 격리 수준](java/@Transactional%20격리%20수준.md)
 - [@Transactional 심화](java/@Transactional%20심화.md)
