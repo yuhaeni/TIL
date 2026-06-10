@@ -34,6 +34,7 @@
 - [무상태(Stateless) 웹 계층](system-design/무상태(Stateless)%20웹%20계층.md)
 - [분산 환경 동시성 제어 — DB 락 vs Redis 분산 락, Redlock, Fencing Token](system-design/분산%20환경%20동시성%20제어%20-%20DB%20락%20vs%20Redis%20분산%20락,%20Redlock,%20Fencing%20Token.md)
 - [애플리케이션 캐시 전략(LRU)](system-design/애플리케이션%20캐시%20전략(LRU).md)
+- [헥사고널 아키텍처 — Ports & Adapters, DIP, 다형성, Template Method, OCP](system-design/헥사고널%20아키텍처%20-%20Ports%20&%20Adapters,%20DIP,%20다형성,%20Template%20Method,%20OCP.md)
 
 ### 🐳 Docker
 
