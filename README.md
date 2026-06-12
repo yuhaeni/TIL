@@ -57,6 +57,7 @@
 - [GlobalExceptionHandler와 전역 예외 처리](java/GlobalExceptionHandler와%20전역%20예외%20처리.md)
 - [JVM 런타임 데이터 영역 5개 — 공유 vs 스레드별, Stack, Method Area, PC Register](java/JVM%20런타임%20데이터%20영역%205개%20-%20공유%20vs%20스레드별,%20Stack,%20Method%20Area,%20PC%20Register.md)
 - [JVM 메모리와 GC, 리플렉션 최적화](java/JVM%20메모리와%20GC,%20리플렉션%20최적화.md)
+- [Java 21 모던 스택 — record, -parameters, 패턴 매칭 instanceof, 버전 업그레이드 트레이드오프](java/Java%2021%20모던%20스택%20-%20record,%20-parameters,%20패턴%20매칭%20instanceof,%20버전%20업그레이드.md)
 - [Java 자료구조 비교(ArrayList vs LinkedList, Stack vs ArrayDeque)](java/Java%20자료구조%20비교(ArrayList%20vs%20LinkedList,%20Stack%20vs%20ArrayDeque).md)
 - [JpaPagingItemReader `transacted` 함정과 영속성 컨텍스트](java/JpaPagingItemReader%20transacted%20함정과%20영속성%20컨텍스트.md)
 - [LRU 캐시와 멀티스레드 동시성](java/LRU%20캐시와%20멀티스레드%20동시성.md)
