@@ -50,6 +50,7 @@
 - [@Transactional 전파 속성](java/@Transactional%20전파%20속성.md)
 - [@UtilityClass와 final, static](java/@UtilityClass와%20final,%20static.md)
 - [Arrays.sort() 내부 동작](java/Arrays.sort()%20내부%20동작.md)
+- [Caffeine 로컬 캐시의 정체 — JVM Heap, HashMap, 로컬 vs 분산 캐시](java/Caffeine%20로컬%20캐시의%20정체%20-%20JVM%20Heap,%20HashMap,%20로컬%20vs%20분산%20캐시.md)
 - [Caffeine 캐시 적용과 stale data 전략 — evict, @CacheEvict AOP, @Component vs @Configuration, 캐시 단위](java/Caffeine%20캐시%20적용과%20stale%20data%20전략%20-%20evict,%20CacheEvict%20AOP,%20Component%20vs%20Configuration,%20캐시%20단위.md)
 - [Cursor 페이징 구현 — `getPage()=0`과 멱등 restart](java/Cursor%20페이징%20구현%20-%20getPage%200과%20멱등%20restart.md)
 - [DIP 심화 — 의존의 의미, 추상의 안정성, 인터페이스 이름 짓기, Mock 주입](java/DIP%20심화%20-%20의존의%20의미,%20추상의%20안정성,%20인터페이스%20이름%20짓기,%20Mock%20주입.md)
