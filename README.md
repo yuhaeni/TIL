@@ -86,6 +86,7 @@
 - [record와 @Valid 동작 원리](java/record와%20@Valid%20동작%20원리.md)
 - [객체 지향 설계 기초 — 캡슐화, 상속·합성, 다형성, OCP, 인터페이스 vs 추상 클래스](java/객체%20지향%20설계%20기초%20-%20캡슐화,%20상속·합성,%20다형성,%20OCP,%20인터페이스%20vs%20추상%20클래스.md)
 - [상태 전이 설계와 Enum 활용](java/상태%20전이%20설계와%20Enum%20활용.md)
+- [스프링 이벤트 기반 캐시 무효화 — ApplicationEventPublisher, @TransactionalEventListener, AFTER_COMMIT, race condition](java/스프링%20이벤트%20기반%20캐시%20무효화%20-%20ApplicationEventPublisher,%20TransactionalEventListener,%20AFTER_COMMIT,%20race%20condition.md)
 - [인스턴스화와 프로세스 메모리 구조](java/인스턴스화와%20프로세스%20메모리%20구조.md)
 - [추상화 — 본질 vs 세부사항, 정보 은닉과의 차이, 추상화의 단점과 Rule of Three](java/추상화%20-%20본질%20vs%20세부사항,%20정보%20은닉과의%20차이,%20추상화의%20단점과%20Rule%20of%20Three.md)
 - [커넥션 풀과 HikariCP](java/커넥션%20풀과%20HikariCP.md)
