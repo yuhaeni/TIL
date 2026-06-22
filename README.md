@@ -65,6 +65,7 @@
 - [LRU 캐시와 멀티스레드 동시성](java/LRU%20캐시와%20멀티스레드%20동시성.md)
 - [LinkedHashMap과 Map.merge()](java/LinkedHashMap과%20Map.merge().md)
 - [OOM 면접 답변 — 그래프 패턴 진단, Stack-Heap 참조, STW 비즈니스 임팩트](java/OOM%20면접%20답변%20-%20그래프%20패턴%20진단,%20Stack-Heap%20참조,%20STW%20비즈니스%20임팩트.md)
+- [OOM 실측 리포트 면접 분석 — ExitOnOOM 2-패스, BigDecimal 힙 점유, 누수 vs volume, k6 지표 함정, GC 튜닝](java/OOM%20실측%20리포트%20면접%20분석%20-%20ExitOnOOM%202-패스,%20BigDecimal%20힙점유,%20누수%20vs%20volume,%20k6%20지표%20함정,%20GC%20튜닝.md)
 - [OOM 진단과 메모리 누수 해결 — GC Roots, 참조, Caffeine](java/OOM%20진단과%20메모리%20누수%20해결%20-%20GC%20Roots,%20참조,%20Caffeine.md)
 - [OOP 추상화와 디자인 패턴](java/OOP%20추상화와%20디자인%20패턴.md)
 - [Quartz Job DI와 JobLauncher — 기본 생성자, lateinit, createBean, JobInstance 재실행, JobOperator 전환](java/Quartz%20Job%20DI와%20JobLauncher%20-%20기본%20생성자,%20lateinit,%20JobInstance%20재실행,%20JobOperator%20전환.md)
