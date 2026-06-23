@@ -30,6 +30,7 @@
 ### ⚙️ 시스템 설계
 
 - [대용량 트래픽 캐시 설계 — Cache-Aside, W-TinyLFU, 다층 캐시, Cache Stampede](system-design/대용량%20트래픽%20캐시%20설계%20-%20Cache-Aside,%20W-TinyLFU,%20다층%20캐시,%20Cache%20Stampede.md)
+- [동시성 벌크헤드 — Semaphore, fast-fail vs queue, StreamingResponseBody async 스레드](system-design/동시성%20벌크헤드%20-%20Semaphore,%20fast-fail%20vs%20queue,%20StreamingResponseBody%20async%20스레드.md)
 - [메세지 큐](system-design/메세지%20큐.md)
 - [무상태(Stateless) 웹 계층](system-design/무상태(Stateless)%20웹%20계층.md)
 - [분산 환경 동시성 제어 — DB 락 vs Redis 분산 락, Redlock, Fencing Token](system-design/분산%20환경%20동시성%20제어%20-%20DB%20락%20vs%20Redis%20분산%20락,%20Redlock,%20Fencing%20Token.md)
