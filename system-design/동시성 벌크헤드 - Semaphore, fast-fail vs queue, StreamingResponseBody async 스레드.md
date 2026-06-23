@@ -85,7 +85,12 @@ public ResponseEntity<StreamingResponseBody> streamSalesDetailsGuarded(...) {
 이 구조에서 **acquire와 release의 위치가 비대칭**인 게 핵심이다.
 - `acquire`는 컨트롤러 동기 구간 → 거절이 응답 커밋 *전*이라 정상 MVC 경로로 깨끗한 429가 나간다.
 - `release`는 바디의 `finally` → 바디는 컨트롤러 리턴 후 async 스레드가 실행하므로, permit이 **스트림 마지막 flush까지** 점유돼야 cap이 실효한다. (컨트롤러 finally에 두면 바디 쓰기 전에 반납돼 cap이 무너진다.)
-- permit 누수 전제: `tryAcquire` 성공~`return` 사이엔 람다 *정의*만 있어 예외 틈이 없다. 그리고 기본 `SimpleAsyncTaskExecutor`(미설정 시 Spring MVC async 기본값)는 작업을 거절하지 않아 `writeTo`가 항상 1회 실행 → `finally` 보장. **단 bounded queue + 거절 정책 executor를 도입하면** 작업 거절로 바디가 안 불려 permit이 샐 수 있다 → release를 async 완료 리스너로 옮기는 보강이 필요하다.
+- permit 누수 전제: `tryAcquire` 성공~`return` 사이엔 람다 *정의*만 있어 예외 틈이 없다. 그리고 async executor가 **작업을 거절하지 않아** `writeTo`가 항상 1회 실행 → `finally` 보장. **단 bounded queue + 거절 정책(AbortPolicy) executor를 도입하면** 큐가 꽉 찼을 때 작업이 거절(`RejectedExecutionException`)돼 바디가 안 불려 permit이 샐 수 있다 → release를 async 완료 리스너로 옮기는 보강이 필요하다.
+
+> **⚠️ "기본 executor가 무엇인가"를 정확히 — `SimpleAsyncTaskExecutor`가 아니다 (Spring Boot 3 기준):**
+> 흔히 "Spring MVC async 기본 executor = `SimpleAsyncTaskExecutor`(무제한 스레드)"라고 단정하기 쉽지만, 이는 **순수 Spring MVC(부트 없이)** 일 때의 폴백이다. **Spring Boot**를 쓰면 `TaskExecutionAutoConfiguration`이 `applicationTaskExecutor`(`ThreadPoolTaskExecutor`) 빈을 자동 등록하고, `WebMvcAutoConfiguration.configureAsyncSupport`가 그 빈을 MVC async executor로 끼워준다. 즉 실제 기본값은 **`ThreadPoolTaskExecutor` (core=8, max=Integer.MAX_VALUE, queue-capacity=Integer.MAX_VALUE)** — 사실상 **8스레드 + 무한 큐**다.
+> - **누수 없다는 결론은 그대로 살아있지만 *이유*가 바뀐다**: "무제한 스레드라 항상 실행"이 아니라 **"무한 큐라 큐가 절대 안 차서 거절 단계에 도달 못 함 → 항상 실행"** 이다.
+> - **무한 큐의 진짜 위험은 스레드 증식이 아니라 메모리다**: 거절을 안 하는 대신, 폭주 시 작업이 큐에 끝없이 쌓이다 **OOM**이 날 수 있다. 벌크헤드(admission control)로 *큐에 들어가기 전에* 막아야 하는 이유.
 
 > **면접 예상 질문:** StreamingResponseBody를 쓸 때 Tomcat 스레드와 async 스레드가 어떻게 나뉘며, 세마포어 acquire를 컨트롤러 동기 구간에, release를 바디의 finally에 두는 비대칭 배치가 왜 필요한가요? 이 구성에서 permit이 누수될 수 있는 조건은 무엇인가요?
 
@@ -97,3 +102,4 @@ public ResponseEntity<StreamingResponseBody> streamSalesDetailsGuarded(...) {
 - **Semaphore**의 permit은 물리 객체가 아니라 정수 카운터이며, 특정 스레드 소유가 아니라서 A 스레드 acquire / B 스레드 release가 안전하다.
 - **fast-fail(즉시 429)** 은 트래픽 폭주 시 "느린 성공보다 빠른 실패"가 더 건강하다는 원칙을 구현한 것으로, p95 31초 큐 대기를 0.1초 거절로 바꾼다. 거절은 "서버 고장(5xx)"이 아니라 "잠깐 바쁨, 재시도하라(429)"의 의미다.
 - **StreamingResponseBody**는 Tomcat 스레드를 빨리 풀어주고 `writeTo`(=람다 실행)를 async 스레드에 위임한다. 람다는 "정의"와 "실행" 시점이 다르며, 이 때문에 acquire(동기 구간)와 release(바디 finally)의 비대칭 배치가 cap 실효의 조건이 된다.
+- **Spring Boot의 MVC async 기본 executor는 `SimpleAsyncTaskExecutor`가 아니라 `applicationTaskExecutor`(`ThreadPoolTaskExecutor`, 8스레드+무한 큐)** 다. 무한 큐라 작업 거절이 없어 permit 누수가 없지만, 그 대가로 폭주 시 큐 적체 → OOM 위험이 있다. (`SimpleAsyncTaskExecutor`는 부트 없는 순수 MVC의 폴백.)
