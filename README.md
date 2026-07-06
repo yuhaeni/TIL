@@ -29,6 +29,7 @@
 - [동시성 벌크헤드 — Semaphore, fast-fail vs queue, StreamingResponseBody async 스레드](system-design/동시성%20벌크헤드%20-%20Semaphore,%20fast-fail%20vs%20queue,%20StreamingResponseBody%20async%20스레드.md)
 - [메세지 큐](system-design/메세지%20큐.md)
 - [무상태(Stateless) 웹 계층](system-design/무상태(Stateless)%20웹%20계층.md)
+- [부하 테스트 측정 용어 — Tomcat busy·current·max, pcpu·scpu, 블로킹 vs 논블로킹](system-design/부하%20테스트%20측정%20용어%20-%20스레드%20풀,%20CPU,%20블로킹.md)
 - [분산 환경 동시성 제어 — DB 락 vs Redis 분산 락, Redlock, Fencing Token](system-design/분산%20환경%20동시성%20제어%20-%20DB%20락%20vs%20Redis%20분산%20락,%20Redlock,%20Fencing%20Token.md)
 - [애플리케이션 캐시 전략(LRU)](system-design/애플리케이션%20캐시%20전략(LRU).md)
 - [헥사고널 아키텍처 — Ports & Adapters, DIP, 다형성, Template Method, OCP](system-design/헥사고널%20아키텍처%20-%20Ports%20&%20Adapters,%20DIP,%20다형성,%20Template%20Method,%20OCP.md)
