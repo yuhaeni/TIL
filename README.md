@@ -101,6 +101,7 @@
 
 ### 📨 Kafka
 
+- [ErrorHandlingDeserializer와 Poison Pill — 역직렬화, Consumer/Listener, DLQ](kafka/ErrorHandlingDeserializer와%20Poison%20Pill%20-%20역직렬화,%20DLQ.md)
 - [Kafka 멱등성과 Consumer Group](kafka/Kafka%20멱등성과%20Consumer%20Group.md)
 - [Kafka 파티션과 컨슈머 모델](kafka/Kafka%20파티션과%20컨슈머%20모델.md)
 
