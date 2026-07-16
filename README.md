@@ -123,6 +123,7 @@
 ### 🛢️ Database
 
 - [NOT EXISTS 최적화 — Anti Join, Short-circuit, NULL 3치 논리, SELECT 1](database/NOT%20EXISTS%20최적화%20—%20Anti%20Join,%20Short-circuit,%20NULL%203치%20논리,%20SELECT%201.md)
+- [PostgreSQL Advisory Lock — check-then-act race, xact vs session, hashtext 충돌, Redis 분산 락 비교](database/PostgreSQL%20Advisory%20Lock%20-%20check-then-act%20race,%20xact%20vs%20session,%20hashtext%20충돌,%20Redis%20분산%20락%20비교.md)
 - [PostgreSQL EXPLAIN ANALYZE 읽기 — Index Only Scan, Materialize, 옵티마이저 전략 변화](database/PostgreSQL%20EXPLAIN%20ANALYZE%20읽기%20-%20Index%20Only%20Scan,%20Materialize,%20옵티마이저%20전략%20변화.md)
 - [PostgreSQL vs MySQL InnoDB — MVCC, UNDO LOG, WAL, VACUUM](database/PostgreSQL%20vs%20MySQL%20InnoDB%20-%20MVCC,%20UNDO,%20WAL,%20VACUUM.md)
 - [PostgreSQL 인덱스와 B+Tree](database/PostgreSQL%20인덱스와%20B+Tree.md)
