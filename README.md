@@ -105,6 +105,7 @@
 - [Kafka 멱등성과 Consumer Group](kafka/Kafka%20멱등성과%20Consumer%20Group.md)
 - [Kafka 재시도 설계 — backoff, head-of-line blocking, non-blocking 재발행, @RetryableTopic](kafka/Kafka%20재시도%20설계%20-%20backoff,%20head-of-line%20blocking,%20non-blocking%20재발행,%20RetryableTopic.md)
 - [Kafka 전달 시맨틱 — at-most-once, at-least-once, exactly-once, 오프셋 vs 멱등키](kafka/Kafka%20전달%20시맨틱%20-%20at-most,%20at-least,%20exactly-once,%20오프셋%20vs%20멱등키.md)
+- [Kafka 파티션 설계 — 리밸런싱, Partition Assignor, Message Key 순서보장, failover](kafka/Kafka%20파티션%20설계%20-%20리밸런싱,%20Partition%20Assignor,%20Message%20Key%20순서보장,%20failover.md)
 - [Kafka 파티션과 컨슈머 모델](kafka/Kafka%20파티션과%20컨슈머%20모델.md)
 
 ### 🟣 Kotlin
