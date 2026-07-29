@@ -102,6 +102,7 @@
 ### 📨 Kafka
 
 - [ErrorHandlingDeserializer와 Poison Pill — 역직렬화, Consumer/Listener, checkDeser, DefaultErrorHandler, DLQ](kafka/ErrorHandlingDeserializer와%20Poison%20Pill%20-%20역직렬화,%20DLQ.md)
+- [Kafka DLT 전송 흐름 — DLQ vs DLT, DeadLetterPublishingRecoverer, KafkaTemplate, 재시도 트레이드오프](kafka/Kafka%20DLT%20전송%20흐름%20-%20DLQ%20vs%20DLT,%20DeadLetterPublishingRecoverer,%20재시도.md)
 - [Kafka 멱등성과 Consumer Group](kafka/Kafka%20멱등성과%20Consumer%20Group.md)
 - [Kafka 재시도 설계 — backoff, head-of-line blocking, non-blocking 재발행, @RetryableTopic](kafka/Kafka%20재시도%20설계%20-%20backoff,%20head-of-line%20blocking,%20non-blocking%20재발행,%20RetryableTopic.md)
 - [Kafka 전달 시맨틱 — at-most-once, at-least-once, exactly-once, 오프셋 vs 멱등키](kafka/Kafka%20전달%20시맨틱%20-%20at-most,%20at-least,%20exactly-once,%20오프셋%20vs%20멱등키.md)
