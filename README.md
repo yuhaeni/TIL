@@ -48,6 +48,7 @@
 - [@Transactional 전파 속성](java/@Transactional%20전파%20속성.md)
 - [@UtilityClass와 final, static](java/@UtilityClass와%20final,%20static.md)
 - [Arrays.sort() 내부 동작](java/Arrays.sort()%20내부%20동작.md)
+- [Caffeine W-TinyLFU 내부 구조 — Window, Probation, Protected, Frequency Sketch](java/Caffeine%20W-TinyLFU%20내부%20구조%20-%20Window,%20Probation,%20Protected,%20Frequency%20Sketch.md)
 - [Caffeine 로컬 캐시의 정체 — JVM Heap, HashMap, 로컬 vs 분산 캐시](java/Caffeine%20로컬%20캐시의%20정체%20-%20JVM%20Heap,%20HashMap,%20로컬%20vs%20분산%20캐시.md)
 - [Caffeine 캐시 적용과 stale data 전략 — evict, @CacheEvict AOP, @Component vs @Configuration, 캐시 단위](java/Caffeine%20캐시%20적용과%20stale%20data%20전략%20-%20evict,%20CacheEvict%20AOP,%20Component%20vs%20Configuration,%20캐시%20단위.md)
 - [Cursor 페이징 구현 — `getPage()=0`과 멱등 restart](java/Cursor%20페이징%20구현%20-%20getPage%200과%20멱등%20restart.md)
