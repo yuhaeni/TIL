@@ -25,6 +25,7 @@
 
 ### ⚙️ 시스템 설계
 
+- [Caffeine 캐시 성능 검증과 k6 지표 — LoadingCache, stale data, VU, p95, checks](system-design/Caffeine%20캐시%20성능%20검증과%20k6%20지표%20-%20LoadingCache,%20stale%20data,%20VU,%20p95,%20checks.md)
 - [대용량 트래픽 캐시 설계 — Cache-Aside, W-TinyLFU, 다층 캐시, Cache Stampede](system-design/대용량%20트래픽%20캐시%20설계%20-%20Cache-Aside,%20W-TinyLFU,%20다층%20캐시,%20Cache%20Stampede.md)
 - [동시성 벌크헤드 — Semaphore, fast-fail vs queue, StreamingResponseBody async 스레드](system-design/동시성%20벌크헤드%20-%20Semaphore,%20fast-fail%20vs%20queue,%20StreamingResponseBody%20async%20스레드.md)
 - [메세지 큐](system-design/메세지%20큐.md)
@@ -129,6 +130,7 @@
 
 - [NOT EXISTS 최적화 — Anti Join, Short-circuit, NULL 3치 논리, SELECT 1](database/NOT%20EXISTS%20최적화%20—%20Anti%20Join,%20Short-circuit,%20NULL%203치%20논리,%20SELECT%201.md)
 - [PostgreSQL Advisory Lock — check-then-act race, xact vs session, hashtext 충돌, Redis 분산 락 비교](database/PostgreSQL%20Advisory%20Lock%20-%20check-then-act%20race,%20xact%20vs%20session,%20hashtext%20충돌,%20Redis%20분산%20락%20비교.md)
+- [PostgreSQL EXPLAIN ANALYZE 실전 분석 — Index Cond, Filter, Nested Loop, 부분 복합 인덱스](database/PostgreSQL%20EXPLAIN%20ANALYZE%20실전%20분석%20-%20Index%20Cond,%20Filter,%20Nested%20Loop,%20부분%20복합%20인덱스.md)
 - [PostgreSQL EXPLAIN ANALYZE 읽기 — Index Only Scan, Materialize, 옵티마이저 전략 변화](database/PostgreSQL%20EXPLAIN%20ANALYZE%20읽기%20-%20Index%20Only%20Scan,%20Materialize,%20옵티마이저%20전략%20변화.md)
 - [PostgreSQL vs MySQL InnoDB — MVCC, UNDO LOG, WAL, VACUUM](database/PostgreSQL%20vs%20MySQL%20InnoDB%20-%20MVCC,%20UNDO,%20WAL,%20VACUUM.md)
 - [PostgreSQL 인덱스와 B+Tree](database/PostgreSQL%20인덱스와%20B+Tree.md)
